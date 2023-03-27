@@ -15,5 +15,7 @@ public class num_2908 {
 
         int Max = Math.max(a,b);
         System.out.print(Max);
+
+        br.close();
     }
 }
