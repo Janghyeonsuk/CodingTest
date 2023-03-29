@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class num_11718 {
     public static void main(String[] args) throws Exception {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> strList = new ArrayList<>();
 
         String line;
 
         int count = 0;
-        while ((line = in.readLine()) != null) {
+        while ((line = br.readLine()) != null) {
             if (line.isEmpty() || count > 100) {
                 break;
             } else {
