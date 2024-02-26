@@ -1,22 +1,38 @@
 package Baekjoon.배열1차원;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class num_10871 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int X = sc.nextInt();
 
-        int a[] = new int[N];
+    public String solved(String str1, String str2){
+        StringTokenizer st = new StringTokenizer(str1);
 
-        for (int i = 0; i < N; i++) {
-            a[i] = sc.nextInt();
+        int n = Integer.parseInt(st.nextToken());
+        int x = Integer.parseInt(st.nextToken());
 
-            if (a[i] < X) {
-                System.out.print(a[i] + " ");
+        StringBuilder sb = new StringBuilder();
 
-            }
+        st = new StringTokenizer(str2);
+
+        for (int i = 0; i < n; i++) {
+            int num = Integer.parseInt(st.nextToken());
+            if (num < x)
+                sb.append(num).append(" ");
         }
+
+        return sb.toString();
+    }
+    public static void main(String[] args) throws IOException {
+        num_10871 main = new num_10871();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String s1 = br.readLine();
+        String s2 = br.readLine();
+
+        System.out.println(main.solved(s1, s2));
     }
 }

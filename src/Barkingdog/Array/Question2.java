@@ -1,7 +1,8 @@
-import java.io.*;
+package Barkingdog.Array;
 
+import java.io.IOException;
 
-public class Main {
+public class Question2 {
     public static void main(String[] args) throws IOException {
         int[] arr = {1, 23, 53, 77, 60};
         int[] flag = new int[101];
