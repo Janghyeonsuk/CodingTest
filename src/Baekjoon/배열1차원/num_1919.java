@@ -1,7 +1,10 @@
-import java.io.*;
-import java.util.StringTokenizer;
+package Baekjoon.배열1차원;
 
-public class Main {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class num_1919 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int[] alpha = new int[26];
