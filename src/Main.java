@@ -2,24 +2,46 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int[] alpha = new int[26];
-        char[] a = br.readLine().toLowerCase().toCharArray();
-        char[] b = br.readLine().toLowerCase().toCharArray();
+    public int solution(int n, int k, int[] arr) {
+        int answer = 0;
+        int cnt = 0;
+        int lt = 0;
 
-        int ans = 0;
-
-        for (char c : a)
-            alpha[c - 'a']++;
-        for (char c : b)
-            alpha[c - 'a']--;
-
-        for (int i = 0; i < 26; i++) {
-            if (alpha[i] != 0)
-                ans += Math.abs(alpha[i]);
+        for (int rt = 0; rt < n; rt++) {
+            if (arr[rt] == 0)
+                cnt++;
+            while (cnt > k) {
+                if (arr[lt] == 0)
+                    cnt--;
+                lt++;
+            }
+            answer = Math.max(answer, rt - lt + 1);
         }
 
-        System.out.println(ans);
+        return answer;
+    }
+
+    public static void main(String[] args) throws IOException {
+        Main T = new Main();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+
+        int[] arr = new int[n];
+
+        st = new StringTokenizer(br.readLine());
+
+        for (int i = 0; i < n; i++)
+            arr[i] = Integer.parseInt(st.nextToken());
+
+
+        bw.write(String.valueOf(T.solution(n, m, arr)));
+
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }

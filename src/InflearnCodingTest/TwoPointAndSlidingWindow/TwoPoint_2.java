@@ -1,8 +1,9 @@
 package InflearnCodingTest.TwoPointAndSlidingWindow;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class TwoPoint_2 {
     // 2. 공통 원소 구하기
@@ -10,37 +11,49 @@ public class TwoPoint_2 {
         ArrayList<Integer> answer = new ArrayList<>();
         Arrays.sort(a);
         Arrays.sort(b);
-        int p1 = 0, p2 = 0;
+
+        int p1 = 0;
+        int p2 = 0;
 
         while (p1 < n && p2 < m) {
             if (a[p1] == b[p2]) {
                 answer.add(a[p1++]);
                 p2++;
-            } else if (a[p1] < b[p2])
+            } else if (a[p1] < b[p2]) {
                 p1++;
-            else
+            } else
                 p2++;
         }
+
         return answer;
     }
 
-    public static void main(String[] args) {
-        TwoPoint_2 main = new TwoPoint_2();
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = in.nextInt();
-        }
-        int m = in.nextInt();
-        int[] b = new int[m];
-        for (int i = 0; i < m; i++) {
-            b[i] = in.nextInt();
-        }
+    public static void main(String[] args) throws IOException {
+        TwoPoint_2 T = new TwoPoint_2();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st;
 
-        for (int x : main.solution(n, m, a, b)) {
-            System.out.println(x + " ");
-        }
+        int n = Integer.parseInt(br.readLine());
+        int[] arr1 = new int[n];
 
+        st = new StringTokenizer(br.readLine());
+
+        for (int i = 0; i < n; i++)
+            arr1[i] = Integer.parseInt(st.nextToken());
+
+        int m = Integer.parseInt(br.readLine());
+        int[] arr2 = new int[m];
+
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < m; i++)
+            arr2[i] = Integer.parseInt(st.nextToken());
+
+        for (int i : T.solution(n, m, arr1, arr2))
+            bw.write(i + " ");
+
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }

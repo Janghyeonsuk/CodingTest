@@ -1,36 +1,52 @@
 package InflearnCodingTest.TwoPointAndSlidingWindow;
 
+import java.io.*;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Complex_4 {
     //4. 연속 부분 수열
     public int solution(int n, int m, int[] arr) {
+        int answer = 0;
         int lt = 0;
-        int answer = 0, sum = 0;
+        int sum = 0;
+
         for (int rt = 0; rt < n; rt++) {
             sum += arr[rt];
             if (sum == m)
                 answer++;
+
             while (sum >= m) {
                 sum -= arr[lt++];
-                if (sum == m)
+                if(sum == m)
                     answer++;
             }
         }
+
         return answer;
     }
 
-    public static void main(String[] args) {
-        Complex_4 main = new Complex_4();
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int m = in.nextInt();
+    public static void main(String[] args) throws IOException {
+        Complex_4 T = new Complex_4();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+
         int[] arr = new int[n];
 
-        for (int i = 0; i < n; i++) {
-            arr[i] = in.nextInt();
-        }
+        st = new StringTokenizer(br.readLine());
 
-        System.out.println(main.solution(n, m, arr));
+        for (int i = 0; i < n; i++)
+            arr[i] = Integer.parseInt(st.nextToken());
+
+
+        bw.write(String.valueOf(T.solution(n, m, arr)));
+
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }

@@ -9,12 +9,14 @@ public class Math_5 {
         int cnt = 1;
         n--;
 
-        while(n > 0) {
+        while (n > 0) {
             cnt++;
             n -= cnt;
-            if(n%cnt == 0)
+            if (n % cnt == 0)
                 answer++;
         }
+
+
         return answer;
     }
 
@@ -25,4 +27,5 @@ public class Math_5 {
 
         System.out.println(main.solution(n));
     }
+
 }
