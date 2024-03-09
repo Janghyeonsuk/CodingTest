@@ -1,4 +1,4 @@
-package Programmers.기초;
+package Programmers.lv0;
 
 public class 등차수열의특정항만더하기 {
     public int solution(int a, int d, boolean[] included) {

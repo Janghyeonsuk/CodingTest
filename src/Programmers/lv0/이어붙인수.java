@@ -1,4 +1,4 @@
-package Programmers.기초;
+package Programmers.lv0;
 
 public class 이어붙인수 {
     public int solution(int[] num_list) {

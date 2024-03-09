@@ -1,4 +1,4 @@
-package Programmers.입문;
+package Programmers.lv0;
 
 public class 배열의평균값 {
     public double solution(int[] numbers) {

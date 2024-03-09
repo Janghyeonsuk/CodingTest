@@ -1,4 +1,4 @@
-package Programmers.기초;
+package Programmers.lv0;
 
 public class 수조작하기2 {
     public String solution(int[] numLog) {

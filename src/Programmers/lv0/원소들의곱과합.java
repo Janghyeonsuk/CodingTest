@@ -1,4 +1,4 @@
-package Programmers.기초;
+package Programmers.lv0;
 
 public class 원소들의곱과합 {
     public int solution(int[] num_list) {

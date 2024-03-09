@@ -1,4 +1,4 @@
-package Programmers.기초;
+package Programmers.lv0;
 
 public class 코드처리하기 {
     public String solution(String code) {

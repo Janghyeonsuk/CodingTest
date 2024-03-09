@@ -1,4 +1,4 @@
-package Programmers.입문;
+package Programmers.lv0;
 
 public class 옷가게할인 {
     public int solution(int price) {
