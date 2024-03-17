@@ -3,23 +3,22 @@ import java.util.stream.IntStream;
 
 
 public class Test {
-    public String solution(String my_string, int[] indices) {
-        String answer = "";
-        List<Character> list = new ArrayList<>();
+    public int[] solution(int[] arr, int[] query) {
+        int start = 0;
+        int end = arr.length - 1;
+        for (int i = 0; i < query.length; i++) {
+            if (i % 2 == 0)
+                end = start + query[i] - 1;
+            else
+                start += query[i];
+        }
 
-        for(char c : my_string.toCharArray())
-            list.add(c);
-
-        for(int i = 0; i < indices.length; i++)
-            list.remove(indices[i]);
-
-        for(char c : list)
-            answer += c;
-        return answer;
+        return Arrays.copyOfRange(arr, start, end + 2);
     }
     public static void main(String[] args) {
         Test T = new Test();
-        System.out.println(T.solution("apporoograpemmemprs", new int[]{1, 16, 6, 15, 0, 10, 11, 3}));
+        for(int i : T.solution(new int[]{0, 1, 2, 3, 4, 5}, new int[]{4, 1, 2}))
+            System.out.println(i + " ");
     }
 
 }
