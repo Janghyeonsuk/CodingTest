@@ -1,8 +1,6 @@
-import java.util.*;
-import java.util.stream.IntStream;
+package Programmers.lv0;
 
-
-public class Test {
+public class x사이의개수 {
     public int[] solution(String myString) {
         String[] s = myString.split("x", myString.length());
         int[] answer = new int[s.length];
@@ -12,8 +10,4 @@ public class Test {
 
         return answer;
     }
-    public static void main(String[] args) {
-        Test T = new Test();
-    }
-
 }
