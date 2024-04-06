@@ -1,4 +1,4 @@
-package Baekjoon.자료구조;
+package Baekjoon.자료구조.linkedlist;
 
 import java.io.BufferedReader;
 import java.io.IOException;
