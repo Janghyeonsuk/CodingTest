@@ -2,6 +2,7 @@ package Baekjoon.자료구조;
 
 import java.io.*;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 import java.util.StringTokenizer;
 
@@ -11,7 +12,7 @@ public class num_1406 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        LinkedList<Character> list = new LinkedList<>();
+        List<Character> list = new LinkedList<>();
         String str = br.readLine();
         for (char c : str.toCharArray()) list.add(c);
 
