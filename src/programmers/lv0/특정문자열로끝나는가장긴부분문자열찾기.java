@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 특정문자열로끝나는가장긴부분문자열찾기 {
     public String solution(String myString, String pat) {

@@ -1,4 +1,4 @@
-package InflearnCodingTest.HashMapAndTreeSet;
+package inflearnCodingTest.HashMapAndTreeSet;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 옹알이1 {
     public int solution(String[] babbling) {

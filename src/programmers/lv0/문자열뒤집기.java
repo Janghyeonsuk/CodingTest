@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 문자열뒤집기 {
     public String solution(String my_string, int s, int e) {

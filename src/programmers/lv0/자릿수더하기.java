@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 자릿수더하기 {
     public int solution(int n) {

@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 import java.util.*;
 import java.util.stream.Collectors;

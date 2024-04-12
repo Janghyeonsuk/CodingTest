@@ -1,4 +1,4 @@
-package InflearnCodingTest.RecursiveAndTreeAndGraph;
+package inflearnCodingTest.RecursiveAndTreeAndGraph;
 
 public class DFS_9 {
     Node root;

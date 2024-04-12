@@ -1,4 +1,4 @@
-package InflearnCodingTest.RecursiveAndTreeAndGraph;
+package inflearnCodingTest.RecursiveAndTreeAndGraph;
 
 import java.util.ArrayList;
 import java.util.Scanner;

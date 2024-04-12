@@ -1,4 +1,4 @@
-package Programmers.lv1;
+package programmers.lv1;
 
 public class 소수만들기 {
     public boolean isPrime(int n){

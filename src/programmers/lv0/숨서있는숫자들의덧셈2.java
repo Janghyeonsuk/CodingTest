@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 숨서있는숫자들의덧셈2 {
     public int solution(String my_string) {

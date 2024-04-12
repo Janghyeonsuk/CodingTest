@@ -1,4 +1,4 @@
-package baekjoon.입출력과사칙연산;
+package baekjoon.io;
 
 public class num_10172 {
     public static void main(String[] args) {

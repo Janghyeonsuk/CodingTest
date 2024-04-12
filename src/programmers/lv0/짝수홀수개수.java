@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 짝수홀수개수 {
     public int[] solution(int[] num_list) {

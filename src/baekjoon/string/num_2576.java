@@ -1,4 +1,4 @@
-package baekjoon.문자열;
+package baekjoon.string;
 
 import java.io.BufferedReader;
 import java.io.IOException;

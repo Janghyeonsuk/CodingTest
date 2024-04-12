@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 모스부호1 {
     public String solution(String letter) {

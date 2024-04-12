@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 부분문자열 {
     public int solution(String str1, String str2) {

@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 구슬을나누는경우 {
     public int solution(int balls, int share) {

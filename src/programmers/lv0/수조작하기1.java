@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 수조작하기1 {
     public int solution(int n, String control) {

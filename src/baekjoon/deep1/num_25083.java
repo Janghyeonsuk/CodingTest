@@ -1,4 +1,4 @@
-package baekjoon.심화1;
+package baekjoon.deep1;
 
 public class num_25083 {
     public static void main(String[] args) {

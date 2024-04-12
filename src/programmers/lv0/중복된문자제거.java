@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 중복된문자제거 {
     public String solution(String my_string) {

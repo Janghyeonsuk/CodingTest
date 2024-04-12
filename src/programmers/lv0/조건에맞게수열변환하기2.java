@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 조건에맞게수열변환하기2 {
     public int solution(int[] arr) {

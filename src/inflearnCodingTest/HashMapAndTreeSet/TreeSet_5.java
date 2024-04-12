@@ -1,4 +1,4 @@
-package InflearnCodingTest.HashMapAndTreeSet;
+package inflearnCodingTest.HashMapAndTreeSet;
 
 import java.util.Collections;
 import java.util.Scanner;

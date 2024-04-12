@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class x사이의개수 {
     public int[] solution(String myString) {

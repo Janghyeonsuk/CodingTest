@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class k의개수 {
     public int solution(int i, int j, int k) {

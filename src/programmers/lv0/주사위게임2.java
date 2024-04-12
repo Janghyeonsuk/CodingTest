@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 주사위게임2 {
     // Math.pow()는 반환 값이 (double)이므로 return이 int형일때 (int)로 형변환 해줄것

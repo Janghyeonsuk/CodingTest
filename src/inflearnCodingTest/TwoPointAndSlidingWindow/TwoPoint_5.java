@@ -1,4 +1,4 @@
-package InflearnCodingTest.TwoPointAndSlidingWindow;
+package inflearnCodingTest.TwoPointAndSlidingWindow;
 
 import java.io.*;
 

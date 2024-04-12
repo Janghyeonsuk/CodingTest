@@ -1,4 +1,4 @@
-package InflearnCodingTest.SortingAndSearching;
+package inflearnCodingTest.SortingAndSearching;
 
 import java.util.ArrayList;
 import java.util.Collections;

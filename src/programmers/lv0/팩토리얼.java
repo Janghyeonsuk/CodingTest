@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 팩토리얼 {
     public int fact(int n) {

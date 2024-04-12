@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 문자열묶기 {
     public int solution(String[] strArr) {

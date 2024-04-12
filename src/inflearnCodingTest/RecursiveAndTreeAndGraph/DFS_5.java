@@ -1,4 +1,4 @@
-package InflearnCodingTest.RecursiveAndTreeAndGraph;
+package inflearnCodingTest.RecursiveAndTreeAndGraph;
 
 class Node {
     int data;

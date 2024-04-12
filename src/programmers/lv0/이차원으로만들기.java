@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 이차원으로만들기 {
     public int[][] solution(int[] num_list, int n) {

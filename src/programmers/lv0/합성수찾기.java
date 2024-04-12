@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 합성수찾기 {
     public boolean check(int n){

@@ -1,4 +1,4 @@
-package Barkingdog.Common;
+package barkingdog.Common;
 
 import java.io.BufferedReader;
 import java.io.IOException;

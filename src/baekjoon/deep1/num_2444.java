@@ -1,4 +1,4 @@
-package baekjoon.심화1;
+package baekjoon.deep1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

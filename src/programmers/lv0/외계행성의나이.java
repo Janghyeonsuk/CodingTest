@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 외계행성의나이 {
     public String solution(int age) {

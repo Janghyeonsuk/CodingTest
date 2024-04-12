@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 문자열대소문자변환하기 {
     public String[] solution(String[] strArr) {

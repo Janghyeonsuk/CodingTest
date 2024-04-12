@@ -1,4 +1,4 @@
-package InflearnCodingTest.Array;
+package inflearnCodingTest.Array;
 
 import java.io.BufferedReader;
 import java.io.IOException;

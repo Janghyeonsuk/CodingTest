@@ -1,7 +1,6 @@
-package InflearnCodingTest.TwoPointAndSlidingWindow;
+package inflearnCodingTest.TwoPointAndSlidingWindow;
 
 import java.io.*;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class SlidingWindow_3 {

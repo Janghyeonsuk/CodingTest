@@ -1,4 +1,4 @@
-package baekjoon.입출력과사칙연산;
+package baekjoon.io;
 
 import java.io.BufferedReader;
 import java.io.IOException;

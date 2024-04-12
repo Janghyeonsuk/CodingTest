@@ -1,4 +1,4 @@
-package InflearnCodingTest.RecursiveAndTreeAndGraph;
+package inflearnCodingTest.RecursiveAndTreeAndGraph;
 
 import java.io.IOException;
 import java.util.ArrayList;

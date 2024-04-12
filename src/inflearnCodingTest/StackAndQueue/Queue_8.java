@@ -1,4 +1,4 @@
-package InflearnCodingTest.StackAndQueue;
+package inflearnCodingTest.StackAndQueue;
 
 import java.util.LinkedList;
 import java.util.Queue;

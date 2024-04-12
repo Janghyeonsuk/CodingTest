@@ -1,4 +1,4 @@
-package baekjoon.자료구조.linkedlist;
+package baekjoon.structure.linkedlist;
 
 import java.io.*;
 import java.util.LinkedList;

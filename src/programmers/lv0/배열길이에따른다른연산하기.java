@@ -1,4 +1,4 @@
-package Programmers.lv0;
+package programmers.lv0;
 
 public class 배열길이에따른다른연산하기 {
     public int[] solution(int[] arr, int n) {

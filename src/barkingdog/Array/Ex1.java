@@ -1,4 +1,4 @@
-package Barkingdog.Array;
+package barkingdog.Array;
 
 import java.util.*;
 import java.io.*;

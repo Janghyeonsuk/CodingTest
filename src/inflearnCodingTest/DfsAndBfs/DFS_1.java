@@ -1,4 +1,4 @@
-package InflearnCodingTest.DfsAndBfs;
+package inflearnCodingTest.DfsAndBfs;
 
 import java.util.Scanner;
 
