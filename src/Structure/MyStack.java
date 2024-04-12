@@ -1,5 +1,6 @@
 package Structure;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
@@ -14,8 +15,8 @@ public class MyStack<E> {
         this.top = -1;
     }
 
-    public MyStack(int size) {
-        this.arr = new Object[size];
+    public MyStack(int capacity) {
+        this.arr = new Object[capacity];
         this.top = -1;
     }
 
@@ -67,7 +68,8 @@ public class MyStack<E> {
 
         E value = (E) arr[top];
 
-        arr[--top] = null;
+        arr[top] = null;
+        top--;
 
         resize();
 
@@ -86,8 +88,8 @@ public class MyStack<E> {
     public int search(E value) {
         // 스택 맨 위 서부터 아래로 순회하여 찾고자 하는 값의 위치를 구한다.
         for (int i = top; i >= 0; i--) {
-            if (arr[i].equals(value)) {
-                return i + 1;
+            if(arr[i].equals(value)) {
+                return top - i + 1;
             }
         }
 
@@ -112,8 +114,8 @@ public class MyStack<E> {
 
         System.out.println(stack.peek()); // 4
 
-        System.out.println(stack.search(4)); // 4
-        System.out.println(stack.search(3)); // 3
+        System.out.println(stack.search(4)); // 1
+        System.out.println(stack.search(3)); // 2
 
         stack.pop();
         stack.pop();
@@ -123,9 +125,8 @@ public class MyStack<E> {
     }
 }
 /*
-
 // ArrayList
-public class Stack<E> {
+class Stack<E> {
     private ArrayList<E> list; // 요소를 담을 내부 리스트
     private int top; // 스택의 가장 마지막 요소를 가리키는 포인터
 
