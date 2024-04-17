@@ -3,16 +3,7 @@ package baekjoon.bfs;
 import java.io.*;
 import java.util.*;
 
-class Point {
-    int x;
-    int y;
-
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
+//Flood fill 유형
 public class BOJ1926 {
     static int n, m, cnt, max;
     static int[][] board;            // 도화지 배열
@@ -21,7 +12,7 @@ public class BOJ1926 {
     static int[] dx = {1, 0, -1, 0};
     static int[] dy = {0, 1, 0, -1};
 
-    public static void BFS(int x, int y) {
+    public void BFS(int x, int y) {
         cnt++;
         vis[x][y] = true;
         Queue<Point> Q = new ArrayDeque<>();
@@ -45,6 +36,7 @@ public class BOJ1926 {
     }
 
     public static void main(String[] args) throws IOException {
+        BOJ1926 T = new BOJ1926();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -63,7 +55,7 @@ public class BOJ1926 {
         for (int x = 0; x < n; x++) {
             for (int y = 0; y < m; y++) {
                 if (board[x][y] == 1 && !vis[x][y])
-                    BFS(x, y);
+                    T.BFS(x, y);
             }
         }
 
