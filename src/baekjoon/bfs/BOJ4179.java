@@ -20,10 +20,10 @@ public class BOJ4179 {
                 int nx = p.x + dx[k];
                 int ny = p.y + dy[k];
 
-                if (nx >= 0 && nx < n && ny >= 0 && ny < m && dis1[nx][ny] == -1 && !board[nx][ny].equals("#")) {
-                    dis1[nx][ny] = dis1[p.x][p.y] + 1;
-                    Q1.offer(new Point(nx, ny));
-                }
+                if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
+                if (dis1[nx][ny] >= 0 || board[nx][ny].equals("#")) continue;
+                dis1[nx][ny] = dis1[p.x][p.y] + 1;
+                Q1.offer(new Point(nx, ny));
             }
         }
     }
@@ -39,7 +39,9 @@ public class BOJ4179 {
                     System.out.println(dis2[p.x][p.y] + 1);
                     return;
                 }
-                if (board[nx][ny].equals("#") || dis2[nx][ny] >= 0 || (dis1[nx][ny] != -1 && dis1[nx][ny] <= dis2[p.x][p.y] + 1)) continue;
+
+                if (dis2[nx][ny] >= 0 || board[nx][ny].equals("#")) continue;
+                if (dis1[nx][ny] != -1 && dis1[nx][ny] <= dis2[p.x][p.y] + 1) continue;
                 dis2[nx][ny] = dis2[p.x][p.y] + 1;
                 Q2.offer(new Point(nx, ny));
             }
