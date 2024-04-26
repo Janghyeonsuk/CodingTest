@@ -10,7 +10,7 @@ public class BOJ1629 {
         if (b == 1)
             return a % c;
         long val = pow(a, b / 2, c);
-        val = val * a % c;
+        val = val * val % c;
         if (b % 2 == 0)
             return val;
 
