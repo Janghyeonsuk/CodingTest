@@ -1,3 +1,4 @@
+/*
 package programmers.lv0;
 
 public class 그림확대 {
@@ -18,3 +19,4 @@ public class 그림확대 {
         return answer;
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package programmers.lv0;
 
 import java.util.*;
@@ -13,3 +14,4 @@ public class ad제거하기 {
         return list.toArray(String[]::new);
     }
 }
+*/

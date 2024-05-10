@@ -9,10 +9,9 @@ public class BOJ2941 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine().toLowerCase();
 
-        ArrayList<String> cro = new ArrayList<>(
-                List.of("c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="));
+        String[] arr = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
 
-        for (String ch : cro)
+        for (String ch : arr)
             str = str.replace(ch, "A");
 
         System.out.println(str.length());
