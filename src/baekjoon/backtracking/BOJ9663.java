@@ -5,7 +5,9 @@ import java.io.*;
 
 public class BOJ9663 {
     static int N, cnt;
-    static boolean[] isused1, isused2, isused3;
+    static boolean[] isused1 = new boolean[30];
+    static boolean[] isused2 = new boolean[30];
+    static boolean[] isused3 = new boolean[30];
 
     public static void solve(int cur) {
         if (cur == N) {
@@ -30,8 +32,8 @@ public class BOJ9663 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
         N = Integer.parseInt(st.nextToken());
+
         solve(0);
         System.out.print(cnt);
 
