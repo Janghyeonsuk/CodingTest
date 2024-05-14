@@ -4,7 +4,6 @@ import java.io.*;
 
 public class SWEA1926 {
     static int T;
-    static int[][] arr;
     static StringBuilder sb = new StringBuilder();
 
     public static void solution(int n) {
@@ -12,7 +11,9 @@ public class SWEA1926 {
             String tmp = String.valueOf(i);
 
             if (tmp.contains("3") || tmp.contains("6") || tmp.contains("9")) {
-                tmp = tmp.replaceAll("[369]", "-");
+                for (int j = 0; j < tmp.length(); j++) {
+                    tmp = tmp.replaceAll("[369]", "-");
+                }
                 tmp = tmp.replaceAll("[0124578]", "");
             }
             sb.append(tmp + " ");

@@ -22,25 +22,27 @@ public class BOJ4949 {
                     case ("["):
                         stack.push(ch);
                         break;
-
                     case (")"):
-                        if (!stack.empty() && stack.peek().equals("("))
+                        if (!stack.empty() && stack.peek().equals("(")) {
                             stack.pop();
-                        else
-                            stack.push(")");
-                        break;
-
+                            break;
+                        } else {
+                            stack.push(ch);
+                            break;
+                        }
                     case ("]"):
-                        if (!stack.empty() && stack.peek().equals("["))
+                        if (!stack.empty() && stack.peek().equals("[")) {
                             stack.pop();
-                        else
-                            stack.push("]");
-                        break;
+                            break;
+                        } else {
+                            stack.push(ch);
+                            break;
+                        }
                     default:
                         break;
                 }
             }
-            if (stack.empty())
+            if(stack.empty())
                 System.out.println("yes");
             else
                 System.out.println("no");

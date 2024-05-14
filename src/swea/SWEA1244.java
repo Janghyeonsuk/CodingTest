@@ -9,12 +9,12 @@ public class SWEA1244 {
     static StringBuilder sb = new StringBuilder();
 
     public static void solution(int k, int cnt) {
-        if (cnt == chance) {
-            String answer = "";
+        String answer = "";
+        if (chance == cnt) {
             for (String s : arr) {
                 answer += s;
             }
-            max = Math.max(max, Integer.parseInt(answer));
+            max = Math.max(Integer.parseInt(answer), max);
             return;
         }
 
@@ -25,6 +25,7 @@ public class SWEA1244 {
                 swap(i, j);
             }
         }
+
     }
 
     private static void swap(int i, int j) {
