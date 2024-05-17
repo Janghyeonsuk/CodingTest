@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class Array_6 {
     // 6.뒤집은 소수
-    public boolean isPrime(int num) {
+    public static boolean isPrime(int num) {
         if (num == 1)
             return false;
         for (int i = 2; i < num; i++) {
@@ -19,18 +19,18 @@ public class Array_6 {
         return true;
     }
 
-    public ArrayList<Integer> solution(int[] arr) {
+    public static ArrayList<Integer> solution(int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
 
         for (int i = 0; i < arr.length; i++) {
-            int tmp = arr[i];
-            int res = 0;
-            while (tmp > 0) {
-                int t = tmp % 10;
-                res = res * 10 + t;
-                tmp = tmp / 10;
-            }
-
+//            int tmp = arr[i];
+//            int res = 0;
+//            while (tmp > 0) {
+//                int t = tmp % 10;
+//                res = res * 10 + t;
+//                tmp = tmp / 10;
+//            }
+            int res = Integer.parseInt(new StringBuilder(String.valueOf(arr[i])).reverse().toString());
             if (isPrime(res))
                 answer.add(res);
         }
@@ -39,7 +39,6 @@ public class Array_6 {
     }
 
     public static void main(String[] args) throws IOException {
-        Array_6 main = new Array_6();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -50,7 +49,7 @@ public class Array_6 {
         for (int i = 0; i < arr.length; i++)
             arr[i] = Integer.parseInt(st.nextToken());
 
-        for (int i : main.solution(arr))
+        for (int i : solution(arr))
             System.out.print(i + " ");
     }
 }

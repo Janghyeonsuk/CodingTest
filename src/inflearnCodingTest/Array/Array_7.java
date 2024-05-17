@@ -1,37 +1,37 @@
 package inflearnCodingTest.Array;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
+
 public class Array_7 {
-    // 7.점수 계산
-    public int solution(int[] arr) {
-        int answer = 0;
-        int score = 0;
+    // 7. 점수계산
+    static int cnt;
+    static int[] arr;
+    static StringBuilder sb = new StringBuilder();
+
+    public static void solution() {
+        int score = 1;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                score++;
-                answer += score;
+            if (arr[i] == 1) {
+                cnt += score++;
             } else
-                score = 0;
+                score = 1;
         }
-        return answer;
     }
 
     public static void main(String[] args) throws IOException {
-        Array_7 main = new Array_7();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        int n = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
-
+        StringTokenizer st;
+        int n = Integer.parseInt(br.readLine());
+        arr = new int[n];
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < arr.length; i++)
+
+        for (int i = 0; i < n; i++)
             arr[i] = Integer.parseInt(st.nextToken());
 
-        System.out.println(main.solution(arr));
+        solution();
+        System.out.println(cnt);
+        br.close();
     }
 }
