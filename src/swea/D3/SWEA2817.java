@@ -1,42 +1,44 @@
-package swea;
+package swea.D3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class SWEA1208 {
-    static int T = 10, N;
+public class SWEA2817 {
+    static int N, K, cnt;
     static int[] arr;
     static StringBuilder sb = new StringBuilder();
 
-    public static void solution(int n, int[] arr) {
-        for (int i = 0; i < n; i++) {
-            Arrays.sort(arr);
-            arr[0]++;
-            arr[99]--;
+    public static void solution(int idx, int sum) {
+        if (idx == N) {
+            if (sum == K) cnt++;
+            return;
         }
-        Arrays.sort(arr);
-        int answer = arr[99] - arr[0];
-        sb.append(answer + "\n");
+
+        solution(idx + 1, sum);
+        solution(idx + 1, sum + arr[idx]);
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
-
+        int T = Integer.parseInt(br.readLine());
         for (int tc = 1; tc <= T; tc++) {
             sb.append("#" + tc + " ");
-            N = Integer.parseInt(br.readLine());
-
-            arr = new int[100];
             st = new StringTokenizer(br.readLine());
-            for (int i = 0; i < arr.length; i++) {
+            N = Integer.parseInt(st.nextToken());
+            K = Integer.parseInt(st.nextToken());
+            arr = new int[N];
+
+            st = new StringTokenizer(br.readLine());
+            for (int i = 0; i < N; i++)
                 arr[i] = Integer.parseInt(st.nextToken());
-            }
-            solution(N, arr);
+            cnt = 0;
+            solution(0, 0);
+            sb.append(cnt + "\n");
         }
+
         System.out.println(sb);
         br.close();
     }

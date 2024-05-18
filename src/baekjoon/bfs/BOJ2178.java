@@ -14,7 +14,6 @@ public class BOJ2178 {
     public void BFS(int x, int y) {
         Queue<Point> Q = new ArrayDeque<>();
         Q.offer(new Point(x, y));
-        board[x][y] = 0;
         while (!Q.isEmpty()) {
             Point p = Q.poll();
             for (int i = 0; i < dn; i++) {
@@ -40,9 +39,9 @@ public class BOJ2178 {
         dis = new int[n + 1][m + 1];
 
         for (int i = 1; i <= n; i++) {
-            String s = br.readLine();
+            String[] s = br.readLine().split("");
             for (int j = 1; j <= m; j++) {
-                board[i][j] = s.charAt(j - 1) - '0';
+                board[i][j] = Integer.parseInt(s[j - 1]);
             }
         }
 

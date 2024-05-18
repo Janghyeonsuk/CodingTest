@@ -1,4 +1,4 @@
-package swea;
+package swea.D3;
 
 import java.io.*;
 import java.util.StringTokenizer;

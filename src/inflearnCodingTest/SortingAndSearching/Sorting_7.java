@@ -1,8 +1,10 @@
 package inflearnCodingTest.SortingAndSearching;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 class Point implements Comparable<Point> {
     public int x, y;
@@ -14,29 +16,30 @@ class Point implements Comparable<Point> {
 
     @Override
     public int compareTo(Point o) {
-        if (this.x == o.x)
-            return this.y - o.y;
-        else
-            return this.x - o.x;
+        if (this.x == o.x) return this.y - o.y;
+        else return this.x - o.x;
     }
 }
+
 public class Sorting_7 {
-    // 7. 좌표 정렬
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        ArrayList<Point> arr = new ArrayList<>();
+        Point[] arr = new Point[N];
 
-        for (int i = 0; i < n; i++) {
-            int x = in.nextInt();
-            int y = in.nextInt();
-            arr.add(new Point(x, y));
+        for (int i = 0; i < N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
+            arr[i] = new Point(x, y);
         }
 
-        Collections.sort(arr);
+        Arrays.sort(arr);
 
-        for (Point o : arr)
-            System.out.println(o.x + " " + o.y);
+        for (Point point : arr)
+            System.out.println(point.x + " " + point.y);
+
+        br.close();
     }
 }
