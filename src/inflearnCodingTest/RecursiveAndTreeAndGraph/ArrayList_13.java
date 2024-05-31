@@ -13,10 +13,11 @@ public class ArrayList_13 {
             answer++;
         else {
             for (int nv : graph.get(v)) {
-                if (ch[nv] == 0)
+                if (ch[nv] == 0) {
                     ch[nv] = 1;
-                DFS(nv);
-                ch[nv] = 0;
+                    DFS(nv);
+                    ch[nv] = 0;
+                }
             }
         }
     }
@@ -39,6 +40,6 @@ public class ArrayList_13 {
         }
         ch[1] = 1;
         main.DFS(1);
-        System.out.println(answer);
+        System.out.print(answer);
     }
 }

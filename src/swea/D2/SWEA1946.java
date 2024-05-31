@@ -19,7 +19,6 @@ public class SWEA1946 {
                     cnt = 0;
                 }
             }
-
         }
 
         sb.append("\n");

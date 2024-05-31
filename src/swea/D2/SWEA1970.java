@@ -13,10 +13,8 @@ public class SWEA1970 {
         int[] count = new int[money.length];
 
         for (int i = 0; i < money.length; i++) {
-            if (n >= money[i]) {
                 count[i] = n / money[i];
                 n %= money[i];
-            }
         }
         for (int i = 0; i < count.length; i++)
             sb.append(count[i] + " ");
