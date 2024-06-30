@@ -6,49 +6,48 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Array_9 {
-    // 9. 격자판 최대합
-    public int solution(int n, int[][] arr) {
-        int answer = Integer.MIN_VALUE;
-        int sum1; // 행의 합
-        int sum2; // 열의 합
+    static int n;
+    static int[][] board;
+
+    public static int solution(int[][] board) {
+        int ans = 0;
+        int sum1, sum2;
 
         for (int i = 0; i < n; i++) {
             sum1 = sum2 = 0;
-            for (int j = 0; j < n; j++) {
-                sum1 += arr[i][j];
-                sum2 += arr[j][i];
-            }
-            answer = Math.max(sum1, answer);
-            answer = Math.max(sum2, answer);
+            for (int j = 0; j < n; j++)
+                sum1 += board[i][j];
+
+
+            for (int j = 0; j < n; j++)
+                sum2 += board[j][i];
+
+            ans = Math.max(ans, Math.max(sum1, sum2));
         }
 
         sum1 = sum2 = 0;
         for (int i = 0; i < n; i++) {
-            sum1 += arr[i][i];
-            sum2 += arr[n - i - 1][i];
+            sum1 += board[i][i];
+            sum2 += board[i][n - i - 1];
         }
-        answer = Math.max(sum1, answer);
-        answer = Math.max(sum2, answer);
+        ans = Math.max(ans, Math.max(sum1,sum2));
 
-        return answer;
+        return ans;
     }
 
     public static void main(String[] args) throws IOException {
-        Array_9 main = new Array_9();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        int n = Integer.parseInt(st.nextToken());
-        int[][] arr = new int[n][n];
+        n = Integer.parseInt(br.readLine());
+        board = new int[n][n];
 
 
         for (int i = 0; i < n; i++) {
-            st = new StringTokenizer(br.readLine());
+            StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 0; j < n; j++) {
-                arr[i][j] = Integer.parseInt(st.nextToken());
+                board[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 
-        System.out.println(main.solution(n, arr));
+        System.out.println(solution(board));
     }
 }
