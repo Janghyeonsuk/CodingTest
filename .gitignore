@@ -1,3 +1,5 @@
 ### ignore ###
 src/Main.java
 src/Solution.java
+
+.DS_Store
