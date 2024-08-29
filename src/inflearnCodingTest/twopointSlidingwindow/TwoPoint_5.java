@@ -4,7 +4,7 @@ import java.io.*;
 
 public class TwoPoint_5 {
     //5. 연속된 자연수의 합
-    public int solution(int n) {
+    public static int solution(int n) {
         int answer = 0;
         int lt = 0;
         int m = n / 2 + 1;
@@ -28,16 +28,10 @@ public class TwoPoint_5 {
     }
 
     public static void main(String[] args) throws IOException {
-        TwoPoint_5 T = new TwoPoint_5();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int n = Integer.parseInt(br.readLine());
 
-        bw.write(String.valueOf(T.solution(n)));
-
-        bw.flush();
-        bw.close();
-        br.close();
+        System.out.println(solution(n));
     }
 }
