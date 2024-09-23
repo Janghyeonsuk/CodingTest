@@ -7,17 +7,17 @@ import java.io.InputStreamReader;
 public class String_9 {
     // 9.숫자만 추출
     public String solution(String str) {
-        String answer;
+        String ans;
         StringBuilder sb = new StringBuilder();
-        char[] c = str.toCharArray();
 
-        for (char x : c)
-            if (Character.isDigit(x))
-                sb.append(x);
+        for (char c : str.toCharArray()) {
+            if(Character.isDigit(c))
+                sb.append(c);
+        }
 
-        answer = sb.toString();
+        ans = sb.toString();
 
-        return answer;
+        return ans;
 
         /*
         int answer = 0;

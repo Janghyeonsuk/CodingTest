@@ -7,18 +7,17 @@ import java.io.InputStreamReader;
 public class String_12 {
     //12. 암호
     public String solution(int n, String str) {
-        StringBuilder answer = new StringBuilder();
-
+        StringBuilder sb = new StringBuilder();
+        str = str.replaceAll("#", "1").replaceAll("\\*","0");
         for (int i = 0; i < n; i++) {
-            // 전체 문자열을 암호화
-            String tmp = str.substring(i * 7, (i * 7) + 7)
-                    .replaceAll("#", "1").replaceAll("\\*", "0");
+            String tmp = str.substring(0, 7); //7개씩 자르기
 
-            int num = Integer.parseInt(tmp, 2); // 암호화한 문자열을 2진수로 변환
-            answer.append((char) num); // 이진수를 알파벳으로 변환후 저장
+            int num = Integer.parseInt(tmp, 2); //이진수를 숫자로 변환
+            System.out.println(num);
+            sb.append((char) num); //이진수를 char형으로 변환
+            str = str.substring(7);
         }
-
-        return answer.toString();
+        return sb.toString();
     }
 
     public static void main(String[] args) throws IOException {

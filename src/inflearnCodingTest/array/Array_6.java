@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class Array_6 {
     // 6.뒤집은 소수
-    public static boolean isPrime(int num) {
+    private static boolean isPrime(int num) {
         if (num == 1)
             return false;
         for (int i = 2; i < num; i++) {

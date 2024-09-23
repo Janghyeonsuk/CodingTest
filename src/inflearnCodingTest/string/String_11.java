@@ -8,22 +8,24 @@ public class String_11 {
     // 11. 문자열 압축
     public String solution(String str) {
         //마지막 문자를 비교하기 위해서 빈 문자열을 추가해야함
-        StringBuilder answer = new StringBuilder();
         str = str + " ";
+        StringBuilder sb = new StringBuilder();
         int cnt = 1;
-
-        for (int i = 0; i < str.length() - 1; i++) {
-            if (str.charAt(i) == str.charAt(i + 1))
+        char ch = str.charAt(0);
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) == ch) {
                 cnt++;
-            else {
-                answer.append(str.charAt(i));
+            } else {
+                sb.append(ch);
                 if (cnt > 1)
-                    answer.append(cnt);
+                    sb.append(cnt);
+
+                ch = str.charAt(i);
                 cnt = 1;
             }
         }
 
-        return answer.toString();
+        return sb.toString();
     }
 
     public static void main(String[] args) throws IOException {

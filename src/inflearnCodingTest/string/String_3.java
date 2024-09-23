@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 // 3.문장 속 단어
 public class String_3 {
     public String solution(String str) {
-        String answer = "";
+        String ans = "";
         int maxLen = Integer.MIN_VALUE;
 
         /*
@@ -22,22 +22,20 @@ public class String_3 {
         */
 
         // index, substring use
-        int pos;
+        str = str + " ";
+        int idx;
 
-        while ((pos = str.indexOf(' ')) != -1) {
-            String tmp = str.substring(0, pos);
+        while ((idx = str.indexOf(" ")) != -1) {
+            String tmp = str.substring(0, idx);
             int len = tmp.length();
 
             if (len > maxLen) {
                 maxLen = len;
-                answer = tmp;
+                ans = tmp;
             }
-
-            str = str.substring(pos + 1);
+            str = str.substring(idx + 1);
         }
-        if (str.length() > maxLen)
-            answer = str;
-        return answer;
+        return ans;
     }
 
     public static void main(String[] args) throws IOException {
