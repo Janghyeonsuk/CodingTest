@@ -14,13 +14,13 @@ public class Array_12 {
     public static int solution(int n, int m) {
         int ans = 0;
 
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                int cnt = 0;
-                if (i != j) {
-                    for (int k = 0; k < m; k++) {
+        for (int i = 1; i <= n; i++) { //현재 학생
+            for (int j = 1; j <= n; j++) { //비교할 학생
+                int cnt = 0;//현재 학생이 비교학생보다 시험을 잘본 횟수
+                if (i != j) { // 둘이 겹치지 않도록
+                    for (int k = 0; k < m; k++) { // 문제
                         int pi = 0, pj = 0;
-                        for (int l = 0; l < n; l++) {
+                        for (int l = 0; l < n; l++) { // 학생 등수 기록
                             if (board[k][l] == i) pi = l;
                             if (board[k][l] == j) pj = l;
                         }

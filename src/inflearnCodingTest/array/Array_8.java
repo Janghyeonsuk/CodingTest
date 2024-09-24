@@ -8,18 +8,18 @@ import java.util.StringTokenizer;
 
 public class Array_8 {
     // 8. 등수 구하기
-    public ArrayList<Integer> solution(int[] arr) {
-        ArrayList<Integer> answer = new ArrayList<>();
+    public int[] solution(int[] arr) {
+        int[] ans = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
             int cnt = 1;
             for (int j = 0; j < arr.length; j++) {
                 if (arr[j] > arr[i])
                     cnt++;
             }
-            answer.add(cnt);
+            ans[i] = cnt;
         }
 
-        return answer;
+        return ans;
     }
 
     public static void main(String[] args) throws IOException {
