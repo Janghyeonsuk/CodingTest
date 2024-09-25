@@ -1,8 +1,12 @@
 package inflearnCodingTest.hashmaptreeset;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class HashMap_3 {
     // 3. 매출액의 종류
@@ -19,7 +23,7 @@ public class HashMap_3 {
             map.put(arr[rt], map.getOrDefault(arr[rt], 0) + 1);
             answer.add(map.size());
             map.put(arr[lt], map.get(arr[lt]) - 1);
-            if(map.get(arr[lt]) == 0)
+            if (map.get(arr[lt]) == 0)
                 map.remove(arr[lt]);
             lt++;
         }
@@ -27,14 +31,18 @@ public class HashMap_3 {
         return answer;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         HashMap_3 main = new HashMap_3();
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int k = in.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
         int[] arr = new int[n];
+
+        st = new StringTokenizer(br.readLine());
+
         for (int i = 0; i < n; i++) {
-            arr[i] = in.nextInt();
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
         for (int i : main.solution(n, k, arr)) {

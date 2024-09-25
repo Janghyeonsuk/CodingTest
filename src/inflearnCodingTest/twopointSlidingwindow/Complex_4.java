@@ -6,23 +6,21 @@ import java.util.StringTokenizer;
 public class Complex_4 {
     //4. 연속 부분 수열
     public int solution(int n, int m, int[] arr) {
-        int answer = 0;
+        int ans = 0;
         int lt = 0;
         int sum = 0;
 
         for (int rt = 0; rt < n; rt++) {
             sum += arr[rt];
-            if (sum == m)
-                answer++;
+            if(sum == m) ans++;
 
-            while (sum >= m) {
+            while(sum >= m){
                 sum -= arr[lt++];
-                if(sum == m)
-                    answer++;
+                if(sum == m) ans++;
             }
         }
 
-        return answer;
+        return ans;
     }
 
     public static void main(String[] args) throws IOException {

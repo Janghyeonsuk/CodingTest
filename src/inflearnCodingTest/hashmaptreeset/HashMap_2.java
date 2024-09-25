@@ -21,6 +21,23 @@ public class HashMap_2 {
         }
 
         return answer;
+
+//        String answer = "YES";
+//        HashMap<Character, Integer> map = new HashMap<>();
+//
+//        for (char x : s1.toCharArray()) {
+//            map.put(x, map.getOrDefault(x, 0) + 1);
+//        }
+//        for (char x : s2.toCharArray()) {
+//            map.put(x, map.getOrDefault(x, 0) + 1);
+//        }
+//
+//        for (Character key : map.keySet()) {
+//            if (map.get(key) % 2 != 0)
+//                return "NO";
+//        }
+//
+//        return answer;
     }
 
     public static void main(String[] args) {
