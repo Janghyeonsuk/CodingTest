@@ -6,30 +6,36 @@ import java.util.Stack;
 public class Stack_4 {
     // 4. 후위 연산식 계산
 
-    public int solution(String str) {
-        int answer = 0;
-        Stack<Integer> stack = new Stack<>();
+    public static int solution(String str) {
+        int ans;
+        Stack<Integer> S = new Stack<>();
 
         for (char x : str.toCharArray()) {
-            if (Character.isDigit(x))
-                stack.push(x - 48);
+            if (Character.isDigit(x)) S.push(x - '0');
             else {
-                int rt = stack.pop();
-                int lt = stack.pop();
+                int rt = S.pop();
+                int lt = S.pop();
 
-                if (x == '+')
-                    stack.push(lt + rt);
-                else if (x == '-')
-                    stack.push(lt - rt);
-                else if (x == '*')
-                    stack.push(lt * rt);
-                else if (x == '/')
-                    stack.push(lt / rt);
+                switch (x) {
+                    case '+':
+                        S.push(lt + rt);
+                        break;
+                    case '-':
+                        S.push(lt - rt);
+                        break;
+                    case '*':
+                        S.push(lt * rt);
+                        break;
+                    case '/':
+                        S.push(lt / rt);
+                        break;
+                }
             }
-
         }
-        answer = stack.pop();
-        return answer;
+
+        ans = S.pop();
+
+        return ans;
     }
 
 
@@ -38,6 +44,6 @@ public class Stack_4 {
         Scanner in = new Scanner(System.in);
         String str = in.next();
 
-        System.out.println(main.solution(str));
+        System.out.println(solution(str));
     }
 }

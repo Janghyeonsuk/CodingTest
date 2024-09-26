@@ -6,7 +6,7 @@ import java.util.Stack;
 public class Stack_2 {
     // 2. 괄호 문자 제거
     public String solution(String str) {
-        String answer = "";
+        StringBuilder sb = new StringBuilder();
         Stack<Character> stack = new Stack<>();
 
         for (char x : str.toCharArray()) {
@@ -17,10 +17,23 @@ public class Stack_2 {
         }
 
         for (int i = 0; i < stack.size(); i++) {
-            answer += stack.get(i);
+            sb.append(stack.get(i));
         }
 
-        return answer;
+//        Stack<Character> S = new Stack<>();
+//        for (char x : str.toCharArray()) {
+//            if (x == '(') {
+//                S.push(x);
+//            } else if (x == ')') {
+//                if (!S.isEmpty())
+//                    S.pop();
+//            } else {
+//                if (S.isEmpty())
+//                    sb.append(x);
+//            }
+//        }
+
+        return sb.toString();
     }
 
     public static void main(String[] args) {

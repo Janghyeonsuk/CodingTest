@@ -5,12 +5,12 @@ import java.util.Stack;
 
 public class Stack_3 {
     //3. 크레인 인형 뽑기 (카카오)
-    public int solution(int[][] board, int[] moves) {
+    public int solution(int n, int m, int[][] board, int[] moves) {
         int answer = 0;
         Stack<Integer> stack = new Stack<>();
 
         for (int pos : moves) {
-            for (int i = 0; i < board.length; i++) {
+            for (int i = 0; i < n; i++) {
                 if (board[i][pos - 1] != 0) {
                     int tmp = board[i][pos - 1];
                     board[i][pos - 1] = 0;
@@ -25,6 +25,27 @@ public class Stack_3 {
         }
 
         return answer;
+
+//        int ans = 0;
+//        Stack<Integer> S = new Stack<>();
+//        for (int i = 0; i < m; i++) {
+//            int pos = moves[i] - 1;
+//            for (int j = 0; j < n; j++) {
+//                if (board[j][pos] != 0) {
+//                    int tmp = board[j][pos];
+//                    board[j][pos] = 0;
+//                    if (!S.isEmpty() && S.peek() == tmp) {
+//                        S.pop();
+//                        ans += 2;
+//                    } else {
+//                        S.push(tmp);
+//                    }
+//                    break;
+//                }
+//            }
+//        }
+//
+//        return ans;
     }
 
 
@@ -44,6 +65,6 @@ public class Stack_3 {
         for (int i = 0; i < m; i++)
             moves[i] = in.nextInt();
 
-        System.out.println(main.solution(board, moves));
+        System.out.println(main.solution(n, m, board, moves));
     }
 }
