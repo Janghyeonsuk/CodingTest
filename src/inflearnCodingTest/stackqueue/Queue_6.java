@@ -22,6 +22,20 @@ public class Queue_6 {
                 answer = Q.poll();
         }
 
+//        int cnt = 0;
+//        while (!Q.isEmpty()) {
+//            cnt++;
+//            if (Q.size() == 1) {
+//                answers = Q.poll();
+//                break;
+//            }
+//            if (cnt == k) {
+//                Q.poll();
+//                cnt = 0;
+//            }
+//            else Q.offer(Q.poll());
+//        }
+
         return answer;
     }
 

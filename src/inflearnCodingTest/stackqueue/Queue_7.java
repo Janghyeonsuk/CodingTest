@@ -1,5 +1,6 @@
 package inflearnCodingTest.stackqueue;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -19,6 +20,23 @@ public class Queue_7 {
         if (!Q.isEmpty()) answer = "NO";
 
         return answer;
+
+//        String ans = "NO";
+//        Queue<Character> Q = new ArrayDeque<>();
+//
+//        for (char x : a.toCharArray())
+//            Q.offer(x);
+//
+//        for (char x : b.toCharArray()) {
+//            if (!Q.isEmpty()) {
+//                if (x == Q.peek()) Q.poll();
+//            } else {
+//                ans = "YES";
+//                break;
+//            }
+//        }
+//
+//        return ans;
     }
 
 
