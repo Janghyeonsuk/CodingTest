@@ -4,18 +4,21 @@ import java.util.Scanner;
 
 public class Sorting_2 {
     // 2. 버블정렬
-    public int[] solution(int n, int[] arr) {
 
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp;
-                }
+    public int[] solution(int n, int[] arr) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] > arr[j])
+                    swap(i, j, arr);
             }
         }
         return arr;
+    }
+
+    public void swap(int i, int j, int[] arr) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 
     public static void main(String[] args) {

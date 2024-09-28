@@ -1,11 +1,13 @@
 package inflearnCodingTest.sortingsearching;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Sorting_5 {
     // 5. 중복 확인
     public String solution(int n, int[] arr) {
+        //O(n log n)
         String answer = "U";
         Arrays.sort(arr);
 
@@ -16,6 +18,17 @@ public class Sorting_5 {
             }
         return answer;
 
+//        //O(n)
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//
+//        for (int x : arr)
+//            map.put(x, map.getOrDefault(x, 0) + 1);
+//
+//        for (Integer value : map.values()) {
+//            if(value > 1) return 'D';
+//        }
+//
+//        return 'U';
     }
 
     public static void main(String[] args) {

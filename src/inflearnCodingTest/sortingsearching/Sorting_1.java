@@ -3,21 +3,23 @@ package inflearnCodingTest.sortingsearching;
 import java.util.Scanner;
 
 public class Sorting_1 {
+
     // 1. 선택정렬
     public int[] solution(int n, int[] arr) {
-
-        for (int i = 0; i < n - 1; i++) {
-            int minIndex = i;
+        for (int i = 0; i < n; i++) {
+            int idx = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[minIndex] > arr[j])
-                    minIndex = j;
+                if (arr[idx] > arr[j]) idx = j;
             }
-            int tmp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = tmp;
+            swap(i, idx, arr);
         }
-
         return arr;
+    }
+
+    public void swap(int i, int j, int[] arr) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 
     public static void main(String[] args) {

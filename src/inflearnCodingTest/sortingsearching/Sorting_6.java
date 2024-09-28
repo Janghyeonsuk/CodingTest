@@ -7,18 +7,19 @@ import java.util.Scanner;
 public class Sorting_6 {
     // 6. 장난 꾸러기
     public ArrayList<Integer> solution(int n, int[] arr) {
-        ArrayList<Integer> answer = new ArrayList<>();
+        ArrayList<Integer> ans = new ArrayList<>();
+        int[] clone = arr.clone();
+        Arrays.sort(clone);
 
-        int[] tmp = arr.clone();
-        Arrays.sort(tmp);
-
+        int cnt = 0;
         for (int i = 0; i < n; i++) {
-            if (arr[i] != tmp[i])
-                answer.add(i + 1);
+            if (cnt == 2) break;
+            if (arr[i] != clone[i]) {
+                ans.add(i + 1);
+                cnt++;
+            }
         }
-
-        return answer;
-
+        return ans;
     }
 
     public static void main(String[] args) {
