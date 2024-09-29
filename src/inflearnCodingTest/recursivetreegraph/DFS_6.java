@@ -5,22 +5,19 @@ import java.util.Scanner;
 public class DFS_6 {
     // 6. 부분집합 구하기(DFS)
     static int n;
-    static int[] ch;
+    static boolean[] ch;
 
     public void DFS(int L) {
         if (L == n + 1) {
-            String tmp = "";
+            StringBuilder tmp = new StringBuilder();
             for (int i = 1; i <= n; i++) {
-                if (ch[i] == 1)
-                    tmp += (i + " ");
+                if (ch[i]) tmp.append(i).append(" ");
             }
-            if (!tmp.isEmpty()) {
-                System.out.println(tmp);
-            }
+            if (!tmp.isEmpty()) System.out.println(tmp.toString());
         } else {
-            ch[L] = 1;
+            ch[L] = true;
             DFS(L + 1);
-            ch[L] = 0;
+            ch[L] = false;
             DFS(L + 1);
         }
     }
@@ -30,7 +27,7 @@ public class DFS_6 {
         DFS_6 main = new DFS_6();
         Scanner in = new Scanner(System.in);
         n = in.nextInt();
-        ch = new int[n + 1];
+        ch = new boolean[n + 1];
         main.DFS(1);
     }
 }

@@ -24,7 +24,6 @@ public class DecisionAlgorithm_9 {
         int answer = 0;
         int lt = Arrays.stream(arr).max().getAsInt();
         int rt = Arrays.stream(arr).sum();
-        Arrays.sort(arr);
 
         while (lt <= rt) {
             int mid = (lt + rt) / 2;
