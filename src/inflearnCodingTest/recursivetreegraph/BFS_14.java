@@ -8,21 +8,19 @@ import java.util.Scanner;
 public class BFS_14 {
     static int n, m;
     static ArrayList<ArrayList<Integer>> graph;
-    static int[] ch;
+    static boolean[] ch;
     static int[] dis;
-
+    Queue<Integer> Q = new LinkedList<>();
 
     public void BFS(int v) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(v);
-        ch[v] = 1;
-        dis[v] = 0;
-        while (!queue.isEmpty()) {
-            int cv = queue.poll();
+        Q.offer(v);
+        ch[v] = true;
+        while (!Q.isEmpty()) {
+            int cv = Q.poll();
             for (int nv : graph.get(cv)) {
-                if (ch[nv] == 0) {
-                    ch[nv] = 1;
-                    queue.offer(nv);
+                if (!ch[nv]) {
+                    ch[nv] = true;
+                    Q.offer(nv);
                     dis[nv] = dis[cv] + 1;
                 }
             }
@@ -38,7 +36,7 @@ public class BFS_14 {
         for (int i = 0; i <= n; i++)
             graph.add(new ArrayList<>());
 
-        ch = new int[n + 1];
+        ch = new boolean[n + 1];
         dis = new int[n + 1];
 
         for (int i = 0; i < m; i++) {

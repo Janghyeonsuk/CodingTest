@@ -19,7 +19,7 @@ public class DFS_9 {
         tree.root.rt = new Node(3);
         tree.root.lt.lt = new Node(4);
         tree.root.lt.rt = new Node(5);
-        System.out.println(tree.DFS(0, tree.root));
+        System.out.print(tree.DFS(0, tree.root));
     }
 
 }

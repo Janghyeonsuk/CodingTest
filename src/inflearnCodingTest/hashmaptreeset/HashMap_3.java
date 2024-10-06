@@ -3,10 +3,7 @@ package inflearnCodingTest.hashmaptreeset;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class HashMap_3 {
     // 3. 매출액의 종류
@@ -17,7 +14,6 @@ public class HashMap_3 {
         for (int i = 0; i < k - 1; i++) {
             map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
-
         int lt = 0;
         for (int rt = k - 1; rt < n; rt++) {
             map.put(arr[rt], map.getOrDefault(arr[rt], 0) + 1);

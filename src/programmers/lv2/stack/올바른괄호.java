@@ -1,4 +1,4 @@
-package programmers.lv2;
+package programmers.lv2.stack;
 
 import java.util.Stack;
 

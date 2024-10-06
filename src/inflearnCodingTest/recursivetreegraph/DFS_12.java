@@ -26,7 +26,7 @@ public class DFS_12 {
         Scanner in = new Scanner(System.in);
         n = in.nextInt();
         m = in.nextInt();
-        graph = new int[n + 1][m + 1];
+        graph = new int[n + 1][n + 1];
         ch = new int[n + 1];
         for (int i = 0; i < m; i++) {
             int a = in.nextInt();

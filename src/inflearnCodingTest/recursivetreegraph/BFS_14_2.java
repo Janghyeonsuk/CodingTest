@@ -10,25 +10,24 @@ public class BFS_14_2 {
     static int answer = 0;
     static ArrayList<ArrayList<Integer>> graph;
     static int n, m;
-    static int[] dis, ch;
+    static int[] dis;
+    static boolean[] ch;
     Queue<Integer> Q = new LinkedList<>();
 
 
     public void BFS(int v) {
-        Queue<Integer> Q = new LinkedList<>();
         Q.offer(v);
-        ch[v] = 1;
-        dis[v] = 0;
+        ch[v] = true;
         int L = 0;
         while (!Q.isEmpty()) {
             int len = Q.size();
             for (int i = 0; i < len; i++) {
-                int cur = Q.poll();
-                dis[cur] = L;
-                for (int nx : graph.get(cur)) {
-                    if (ch[nx] == 0) {
-                        ch[nx] = 1;
-                        Q.offer(nx);
+                int cv = Q.poll();
+                dis[cv] = L;
+                for (int nv : graph.get(cv)) {
+                    if (!ch[nv]) {
+                        ch[nv] = true;
+                        Q.offer(nv);
                     }
                 }
             }
@@ -50,9 +49,8 @@ public class BFS_14_2 {
             int b = in.nextInt();
             graph.get(a).add(b);
         }
-        ch = new int[n + 1];
+        ch = new boolean[n + 1];
         dis = new int[n + 1];
-        ch[1] = 1;
         main.BFS(1);
 
         for (int i = 2; i <= n; i++) {

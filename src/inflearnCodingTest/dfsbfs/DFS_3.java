@@ -7,17 +7,17 @@ public class DFS_3 {
     static int n, m, answer = Integer.MIN_VALUE;
     static int[] ps, pt;
 
-    public static void DFS(int L, int sum, int time) {
-        if (time > m) return;
-        if (L == n) {
-            answer = Math.max(answer, sum);
-        } else {
-            DFS(L + 1, sum, time);
-            DFS(L + 1, sum + ps[L], time + pt[L]);
+    public void DFS(int L, int sSum, int tSum) {
+        if (tSum > m) return;
+        if (L == n) answer = Math.max(answer, sSum);
+        else {
+            DFS(L + 1, sSum, tSum);
+            DFS(L + 1, sSum + ps[L], tSum + pt[L]);
         }
     }
 
     public static void main(String[] args) throws IOException {
+        DFS_3 T = new DFS_3();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
@@ -31,7 +31,7 @@ public class DFS_3 {
             pt[i] = Integer.parseInt(st.nextToken());
         }
 
-        DFS(0, 0, 0);
+        T.DFS(0, 0, 0);
         System.out.print(answer);
     }
 }
