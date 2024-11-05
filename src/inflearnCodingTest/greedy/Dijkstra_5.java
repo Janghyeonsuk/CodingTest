@@ -5,21 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class Edge implements Comparable<Edge> {
-    public int vex;
-    public int cost;
-
-    public Edge(int vex, int cost) {
-        this.vex = vex;
-        this.cost = cost;
-    }
-
-    @Override
-    public int compareTo(Edge o) {
-        return this.cost - o.cost;
-    }
-}
-
 public class Dijkstra_5 {
     static int n, m;
     static int[] dis;
@@ -37,7 +22,7 @@ public class Dijkstra_5 {
             for (Edge ob : graph.get(now)) {
                 if (dis[ob.vex] > nowCost + ob.cost) {
                     dis[ob.vex] = nowCost + ob.cost;
-                    pQ.offer(new Edge(ob.vex, nowCost + ob.cost));
+                    pQ.offer(new Edge(ob.vex, dis[ob.vex]));
                 }
             }
         }
