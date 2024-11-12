@@ -3,23 +3,6 @@ package inflearnCodingTest.greedy;
 import java.io.*;
 import java.util.*;
 
-class TreeEdge implements Comparable<TreeEdge> {
-    public int v1;
-    public int v2;
-    public int cost;
-
-    public TreeEdge(int v1, int v2, int cost) {
-        this.v1 = v1;
-        this.v2 = v2;
-        this.cost = cost;
-    }
-
-    @Override
-    public int compareTo(TreeEdge o) {
-        return this.cost - o.cost;
-    }
-}
-
 public class 최소스패닝트리_크루스칼_7 {
     static int n, m;
     static int[] unf;
@@ -52,19 +35,21 @@ public class 최소스패닝트리_크루스칼_7 {
             int c = Integer.parseInt(st.nextToken());
             arr.add(new TreeEdge(a, b, c));
         }
-        int answer = 0;
+
+        int ans = 0;
         int cnt = 0;
+
         Collections.sort(arr);
 
         for (TreeEdge o : arr) {
             int fv1 = Find(o.v1);
             int fv2 = Find(o.v2);
             if (fv1 != fv2) {
-                answer += o.cost;
-                Union(fv1, fv2);
                 if (cnt++ == n - 1) break;
+                ans += o.cost;
+                Union(fv1, fv2);
             }
         }
-        System.out.println(answer);
+        System.out.println(ans);
     }
 }
