@@ -9,11 +9,12 @@ public class 최대공약수와최소공배수 {
     }
 
     public int getGCD(int a, int b){
-        while(b != 0){
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
+        if(b == 0) return a;
+        else return getGCD(a, b / a);
+    }
+
+    public int getGCDRec(int a, int b){
+        if(b == 0) return a;
+        else return getGCD(b, a % b);
     }
 }

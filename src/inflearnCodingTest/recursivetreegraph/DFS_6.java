@@ -13,7 +13,7 @@ public class DFS_6 {
             for (int i = 1; i <= n; i++) {
                 if (ch[i]) tmp.append(i).append(" ");
             }
-            if (!tmp.isEmpty()) System.out.println(tmp.toString());
+            if (tmp.length() != 0) System.out.println(tmp.toString());
         } else {
             ch[L] = true;
             DFS(L + 1);
