@@ -6,8 +6,7 @@ import java.io.InputStreamReader;
 
 public class String_9 {
     // 9.숫자만 추출
-    public String solution(String str) {
-        String ans;
+    public int solution(String str) {
         StringBuilder sb = new StringBuilder();
 
         for (char c : str.toCharArray()) {
@@ -15,9 +14,7 @@ public class String_9 {
                 sb.append(c);
         }
 
-        ans = sb.toString();
-
-        return ans;
+        return Integer.parseInt(sb.toString());
 
         /*
         int answer = 0;

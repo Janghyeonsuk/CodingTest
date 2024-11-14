@@ -13,10 +13,11 @@ public class Complex_4 {
         for (int rt = 0; rt < n; rt++) {
             sum += arr[rt];
             if(sum == m) ans++;
-
-            while(sum >= m){
-                sum -= arr[lt++];
-                if(sum == m) ans++;
+            if(sum > m){
+                while(sum > m){
+                    sum -= arr[lt++];
+                    if(sum == m) ans++;
+                }
             }
         }
 

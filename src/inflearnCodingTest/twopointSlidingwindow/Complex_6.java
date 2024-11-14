@@ -15,10 +15,12 @@ public class Complex_6 {
         for (int rt = 0; rt < n; rt++) {
             if (arr[rt] == 0) cnt++;
 
-            while (cnt > k) {
-                if (arr[lt++] == 0) cnt--;
+            if (cnt > k) {
+                while (cnt > k) {
+                    if (arr[lt++] == 0) cnt--; //lt 가 0인 지점 다음으로 한칸 이동
+                }
+                ans = Math.max(ans, rt - lt + 1); // 한칸 이동했으므로 + 1
             }
-            ans = Math.max(ans, rt - lt + 1);
         }
 
         return ans;

@@ -8,20 +8,20 @@ import java.util.StringTokenizer;
 
 public class Array_1 {
     // 1. 큰 수 출력하기
-    public ArrayList<Integer> solution(int[] arr) {
+    public static int[] solution(int n, int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
         answer.add(arr[0]);
-
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 1; i < n; i++) {
             if (arr[i] > arr[i - 1])
                 answer.add(arr[i]);
         }
 
-        return answer;
+        return answer.stream()
+                .mapToInt(i -> i)
+                .toArray();
     }
 
     public static void main(String[] args) throws IOException {
-        Array_1 main = new Array_1();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -32,7 +32,7 @@ public class Array_1 {
         for (int i = 0; i < n; i++)
             arr[i] = Integer.parseInt(st.nextToken());
 
-        for (Integer i : main.solution(arr)) {
+        for (Integer i : solution(n, arr)) {
             System.out.print(i + " ");
         }
     }

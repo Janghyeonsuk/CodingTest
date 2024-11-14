@@ -13,11 +13,11 @@ public class TwoPoint_5 {
         for (int rt = 1; rt <= max; rt++) {
             sum += rt;
             if (sum == n) ans++;
-
-            while (sum >= n) {
-                sum -= lt++;
-                if (sum == n)
-                    ans++;
+            if (sum > n) {
+                while (sum > n) {
+                    sum -= lt++;
+                    if (sum == n) ans++;
+                }
             }
         }
         return ans;

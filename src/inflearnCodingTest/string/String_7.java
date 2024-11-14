@@ -7,11 +7,9 @@ import java.io.InputStreamReader;
 public class String_7 {
     //7. 회문 문자열
     public String solution(String str) {
-        String answer = "YES";
-        str = str.toUpperCase();
-        String tmp = new StringBuilder(str).reverse().toString();
-        if (!str.equals(tmp))
-            answer = "NO";
+        String reverse = new StringBuilder(str).reverse().toString();
+
+        return str.equals(reverse) ? "YES" : "NO";
 
         /*char[] charArr = str.toCharArray();
         int lt = 0, rt = str.length() - 1;
@@ -22,8 +20,6 @@ public class String_7 {
             } else
                 answer = "NO";
         }*/
-
-        return answer;
     }
 
     public static void main(String[] args) throws IOException {

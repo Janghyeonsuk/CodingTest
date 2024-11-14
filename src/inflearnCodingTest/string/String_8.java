@@ -10,37 +10,21 @@ public class String_8 {
 
         /*
         // 알파벳만 추출후 직접 비교 방법
-        public String solution(String str) {
-        String answer = "YES";
-        StringBuilder sb = new StringBuilder();
-
-        for (char x : str.toUpperCase().toCharArray()) {
-            if (Character.isAlphabetic(x))
-                sb.append(x);
-        }
-
-        if (!sb.toString().equals(sb.reverse().toString()))
-            answer = "NO";
-
-        return answer;
+        String s = str.replaceAll("[^a-z]", "");
+        return s.equals(new StringBuilder(s).reverse().toString()) ? "YES" : "NO";
     }
     */
 
         // 정규식 사용 방법
-        String answer = "No";
-        str = str.toUpperCase().replaceAll("[^A-Z]", "");
-        String tmp = new StringBuilder(str).reverse().toString();
-        if (str.equals(tmp))
-            answer = "Yes";
-
-        return answer;
+        str = str.replaceAll("[^A-Z]", "");
+        return str.equals(new StringBuilder(str).reverse().toString()) ? "YES" : "NO";
     }
 
     public static void main(String[] args) throws IOException {
         String_8 main = new String_8();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String str = br.readLine();
+        String str = br.readLine().toUpperCase();
 
         System.out.println(main.solution(str));
     }

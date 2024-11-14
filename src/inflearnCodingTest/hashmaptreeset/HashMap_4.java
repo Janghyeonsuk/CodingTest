@@ -24,10 +24,9 @@ public class HashMap_4 {
 
         for (int rt = k; rt < a.length(); rt++) {
             bm.put(a.charAt(rt), bm.getOrDefault(a.charAt(rt), 0) + 1);
-            if (am.equals(bm))
-                ans++;
+            if (am.equals(bm)) ans++;
             bm.put(a.charAt(lt), bm.get(a.charAt(lt)) - 1);
-            if (!bm.containsKey(a.charAt(lt)) || bm.get(a.charAt(lt)) == 0)
+            if (!bm.containsKey(a.charAt(lt)) || bm.get(a.charAt(lt)) == 0) // !bm.containsKey(a.charAt(lt)) 필요 x
                 bm.remove(a.charAt(lt));
             lt++;
         }

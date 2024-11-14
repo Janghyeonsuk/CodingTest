@@ -8,19 +8,15 @@ public class String_11 {
     // 11. 문자열 압축
     public String solution(String str) {
         //마지막 문자를 비교하기 위해서 빈 문자열을 추가해야함
-        str = str + " ";
+        str += " ";
         StringBuilder sb = new StringBuilder();
         int cnt = 1;
-        char ch = str.charAt(0);
-        for (int i = 1; i < str.length(); i++) {
-            if (str.charAt(i) == ch) {
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == str.charAt(i + 1))
                 cnt++;
-            } else {
-                sb.append(ch);
-                if (cnt > 1)
-                    sb.append(cnt);
-
-                ch = str.charAt(i);
+            else {
+                if (cnt > 1) sb.append(str.charAt(i)).append(cnt);
+                else sb.append(str.charAt(i));
                 cnt = 1;
             }
         }

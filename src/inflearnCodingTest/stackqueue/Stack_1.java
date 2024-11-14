@@ -9,22 +9,20 @@ import java.util.Stack;
 public class Stack_1 {
     // 1. 올바른 괄호
     public static String solution(String str) {
-        Stack<Character> S = new Stack<>();
+        Stack<Character> stack = new Stack<>();
 
         for (char x : str.toCharArray()) {
-            if(x == '('){
-                S.push(x);
-            } else{
-                if(S.isEmpty()) {
-                    return "NO";
-                } else
-                    S.pop();
+            if (x == '(')
+                stack.push(x);
+            else {
+                if (stack.isEmpty()) return "NO";
+                stack.pop();
             }
         }
-        if(S.isEmpty())
-            return "YES";
-        else
-            return "NO";
+
+        if(!stack.isEmpty()) return "NO";
+
+        return "YES";
     }
 
     public static void main(String[] args) throws IOException {

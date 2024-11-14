@@ -10,14 +10,20 @@ public class Array_7 {
     static int[] arr;
     static StringBuilder sb = new StringBuilder();
 
-    public static void solution() {
-        int score = 1;
+    public static int solution() {
+        int answer = 0;
+        int bonus = 0;
+
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 1) {
-                cnt += score++;
+                answer++;
+                answer += bonus++;
             } else
-                score = 1;
+                bonus = 0;
         }
+
+
+        return answer;
     }
 
     public static void main(String[] args) throws IOException {
