@@ -29,18 +29,17 @@ public class Queue_8 {
 
         while (!Q.isEmpty()) {
             Person tmp = Q.poll();
-
+            boolean hasHigh = false;
             for (Person x : Q) {
                 if (x.priority > tmp.priority) {
-                    Q.offer(tmp);
-                    tmp = null;
+                    hasHigh = true;
                     break;
                 }
             }
-            if (tmp != null) {
+            if (hasHigh) Q.offer(tmp);
+            else {
                 answer++;
-                if (tmp.id == m)
-                    return answer;
+                if (tmp.id == m) return answer;
             }
         }
 

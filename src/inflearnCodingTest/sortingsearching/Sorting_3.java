@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class Sorting_3 {
     // 3. 삽입 정렬
 
+    //5 3 2 1
+    // tmp = 3 | 5 5 2 1 j = 0 -> j = -1  | 3 5 2 1
+    // tmp = 2 | 3 5 5 1 | j = 1 -> j = 0 | 3 3 5 1 | j = -1 | 2 3 5 1
+    // tmp = 1 | 2 3 5 5 | j = 2 -> j = 1 | 2 3 3 5 | j = 0 | 2 2 3 5 -> j = -1 | 1 2 3 5
+
     // 최적화 -> swap이 아닌 shift
     public int[] solution(int n, int[] arr) {
         for (int i = 1; i < n; i++) {
