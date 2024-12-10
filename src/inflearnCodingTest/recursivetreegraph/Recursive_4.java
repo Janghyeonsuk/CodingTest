@@ -23,8 +23,8 @@ public class Recursive_4 {
         Recursive_4 T = new Recursive_4();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        fibo = new int[n];
-        for (int i = 1; i < n; i++) {
+        fibo = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
             System.out.print(T.DFS(i) + " ");
         }
     }
