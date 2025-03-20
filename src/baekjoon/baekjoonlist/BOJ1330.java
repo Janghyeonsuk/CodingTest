@@ -1,4 +1,4 @@
-package baekjoon.condition;
+package baekjoon.baekjoonlist;
 
 import java.io.BufferedReader;
 import java.io.IOException;
