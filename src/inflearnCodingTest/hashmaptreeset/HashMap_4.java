@@ -11,7 +11,6 @@ public class HashMap_4 {
 
         HashMap<Character, Integer> am = new HashMap<>();
         HashMap<Character, Integer> bm = new HashMap<>();
-
         for (char x : b.toCharArray()) {
             am.put(x, am.getOrDefault(x, 0) + 1);
         }

@@ -6,3 +6,5 @@ src/Solution.java
 
 .idea
 out
+
+*.iml
