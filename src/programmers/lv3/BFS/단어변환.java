@@ -3,7 +3,7 @@ package programmers.lv3.BFS;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class 네트워크 {
+public class 단어변환 {
 
     public int solution(String begin, String target, String[] words) {
         Queue<String> queue = new ArrayDeque<>();
